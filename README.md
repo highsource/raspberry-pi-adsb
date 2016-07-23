@@ -58,3 +58,44 @@ Cheap and simple ADS-B base station for the [OpenSky Network](https://opensky-ne
 * Perform the Raspbian installation
 * Configure the system after installation (you'd typically want to set region and locale and change the default password (`raspberri`/`pi`).
 * Insert the WLAN adapter set up the WLAN/internet connection
+
+
+
+
+# Network configuration
+
+* Assumed router (Example Fritz.Box)
+* Give Raspberri Pi a name
+* Always use the same IP address 
+* Now you should be able to reach the `dump1090` instance running on the Raspberri Pi via `http://argon:8080`
+* You should also be able to connect to the port `30005` and see some binary data coming from the Raspberri Pi
+
+
+
+
+# Make your Raspberri Pi available from the Internet
+
+So that OpenSky Network can access it.
+* Configure the port forwarding on your router: `30005` -> `argon:3005`
+* You'll need dynamic DNS
+* Create a no-ip.com account
+* Configure Dynamic DNS with your router
+* Now you should be able to connect to your Raspberri Pi `mydomain.no-ip.org:30005`
+
+
+# OpenSky Network configuration
+
+* Create an OpenSky Network account
+* Add a new Sensor:
+* `My OpenSky` > `My Sensors` > `Add Sensor`
+* Receiver Type: dump1090
+* Hostname: mydomain.no-ip.org
+* Port: `30005`
+* Enter or pick your location
+* Submnit
+
+* You should see your sensor on the map. If everything's fine, the sensor should go online in a couple of minutes.
+
+
+
+

@@ -128,7 +128,7 @@ Now your Raspberri Pi is ready to be used.
 ```
 cd ~
 git clone https://github.com/highsource/adsb-base-station.git
-chmod +x ~/adsb-base-station*.sh
+chmod +x ~/adsb-base-station/*.sh
 ```
 
 ### Set up RTL-SDR drivers

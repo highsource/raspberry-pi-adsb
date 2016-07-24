@@ -128,8 +128,7 @@ Now your Raspberri Pi is ready to be used.
 ```
 cd ~
 git clone https://github.com/highsource/adsb-base-station.git
-cd ~/adsb-base-station
-chmod +x *.sh
+chmod +x ~/adsb-base-station*.sh
 ```
 
 ### Set up RTL-SDR drivers
@@ -222,7 +221,6 @@ sudo /etc/init.d/dump1090.sh start
 
 # Network configuration
 
-* Assumed router (Example Fritz.Box)
 * Give Raspberri Pi a name
 * Always use the same IP address 
 * Now you should be able to reach the `dump1090` instance running on the Raspberri Pi via `http://argon:8080`

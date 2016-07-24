@@ -1,21 +1,26 @@
 ADS-B Base Station for OpenSky Network
 ======================================
 
-This guide explains how to assemble a simple ADS-B base station using Raspberri Pi and off-the-shelf components
+# Introduction
+
+This guide explains how to assemble a simple ADS-B base station using Raspberri Pi and cheap off-the-shelf components
 and how to connect your station to the [OpenSky Network](https://opensky-network.org/).
+
+The proposed base station will be able to receive and decode transponder signals from planes in the radius of up to 200-300 km.
+
+You will also be able to feed your data into [OpenSky Network](https://opensky-network.org/) and other networks and use it in local applications like [PlanePlotter](http://www.coaa.co.uk/planeplotter.htm).
 
 Instructions below are based on the [ADS-B using dump1090 for the Raspberry Pi](http://www.satsignal.eu/raspberry-pi/dump1090.html) guide.
 
 This guide assumes installation in a home network with internet connection via router like FRITZ!Box.
-You should be able to open and forward ports on your router. The router must also support dynamic DNS provider like [No-IP.com](http://www.noip.com/).
-
-Raspberri Pi will connect to the network using WiFi.
 
 # Prerequisites
 
-* PC with microSD or SD card reader
-* Monitor with HDMI connection
-* USB Keyboard/Mouse
+* The most important prerequisite is place with clear view of the sky where you could place the antenna.
+* If you want to feed your data into [OpenSky Network](https://opensky-network.org/), you must be able to open and forward ports on your router.
+* [OpenSky Network](https://opensky-network.org/) needs a static host name or IP address to connect to your base station.
+If you don't have a static IP address (you normally don't), your router must support dynamic DNS using a provider like [No-IP.com](http://www.noip.com/).
+* Your router must support WiFi so that you could connect Raspberri Pi to the network wirelessly.
 
 # Shopping list
 
@@ -31,6 +36,8 @@ Raspberri Pi will connect to the network using WiFi.
   * (Optional) Band-pass Filter *SMA Female - SMA Male* [amazon.de](https://www.amazon.de/gp/product/B010GBQXK8)
   * (Optional) Cable *SMA Female - MCX Male* [amazon.de](https://www.amazon.de/gp/product/B00V4PS1L0)
   * USB RTL-SDR Receiver [amazon.de](https://www.amazon.de/gp/product/B00VZ1AWQA)
+
+We'll assume that you already have a PC with microSD or SD card reader, monitor with HDMI connection and USB keyboard and mouse needed for installation and that you don't have to order the additionally.
   
 ## Notes on the shopping list
 

@@ -59,11 +59,16 @@ Cheap and simple ADS-B base station for the [OpenSky Network](https://opensky-ne
 * Perform the Raspbian installation
 * Configure the system after installation (you'd typically want to set region and locale and change the default password (`raspberri`/`pi`).
 * Insert the WLAN adapter and set up the WLAN/internet connection
-* It is hughly recommended to update the system. Run:  
+* Update and upgrade the system. Run:  
 ```
 sudo apt-get update
 sudo apt-get upgrade
 ```
+* Install `git-core` and `git`
+```
+sudo apt-get install git-core git
+```
+
 * You will need a couple of packages later or:
 ```
 sudo apt-get install git-core git cmake libusb-1.0-0-dev build-essential pkg-config

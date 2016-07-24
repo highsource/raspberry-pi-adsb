@@ -79,29 +79,25 @@ sudo apt-get install git-core git cmake libusb-1.0-0-dev build-essential pkg-con
 Instructions below are taken from the [	
 ADS-B using dump1090 for the Raspberry Pi](http://www.satsignal.eu/raspberry-pi/dump1090.html) guide and slighly adapter.
 
-## Build and install  `rtl-sdr` drivers
-
-```
-git clone git://git.osmocom.org/rtl-sdr.git
-cd rtl-sdr
-mkdir build
-cd build
-cmake ../ -DINSTALL_UDEV_RULES=ON
-make
-sudo make install
-sudo ldconfig
-```
-
-Connect antenna via cables to the RTL-SDR receiver, connect the receiver to the Raspberri Pi. Do not use the band-pass filter yet, connect cables directly.
+## Check out the `adsb-base-station` project
 
 ```
 cd ~
-sudo cp ./rtl-sdr/rtl-sdr.rules /etc/udev/rules.d/
-sudo printf 'blacklist dvb_usb_rtl28xxu\nblacklist rtl2832\nblacklist rtl2830' > /etc/modprobe.d/nortl.conf
-sudo reboot
+git clone https://github.com/highsource/adsb-base-station.git
+cd adsb-base-station
+sudo chmod +x adsb-base-station/*.sh
+```
+## Set up RTL-SDR drivers
+
+```
+cd ~/adsb-base-station
+sudo setup-rtl-sdr.sh
 ```
 
-Check the connection by running:
+You will be prompted to reboot after the set up.
+
+After the system rebooted, check the RTL-SDR connection by running:
+
 ```
 rtl_test
 ```
@@ -125,6 +121,83 @@ Reading samples in async mode...
 ```
 
 This means RTL-SDR drivers were compiled and installed successfully.
+
+## Set up `dump1090`
+
+```
+cd ~/adsb-base-station
+sudo dump1090.sh
+```
+`dump1090` was installed as service
+
+You will be once again prompted to reboot after the set up. 
+
+You might want to check if `dump1090` is running correctly. Just go to `http://127.0.0.1:8080` in the browser on Raspberri Pi, you should see a map with planes.
+
+Alternatively, you can start `dump1090` in the interactive mode in the command line.
+
+First stop the running dump1090 service:
+```
+sudo /etc/init.d/dump1090.sh stop
+```
+
+Now start the `dump1090` in the interactive mode:
+```
+~/dump1090/dump1090 --interactive --gain -10 --net --net-beast
+```
+You should be getting output like:
+
+```
+Hex     Mode  Sqwk  Flight   Alt    Spd  Hdg    Lat      Long   Sig  Msgs   Ti|
+-------------------------------------------------------------------------------
+3C4B4C  S                    34000  470  344                      5    39    1
+44D076  S                    25000                                4     5    1
+3C66B3  S     2037  DLH8YA   19475  339  121   48.916   11.190    4    27    5
+040032  S     2540  ETH707    5875  273  119   49.905    8.698    8   113    0
+3C6DCD  S     7610           31000  465  108                      4    12    1
+44A8A2  S     1000  JAF83X   34625  454  292                      5   130    2
+710105  S     2702  SVA116   33000  510  125   49.382    7.167    4   156    1
+...
+```
+
+Finally, start the `dump1090` service again:
+```
+sudo /etc/init.d/dump1090.sh start
+```
+
+--------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+## Build and install  `rtl-sdr` drivers
+
+```
+git clone git://git.osmocom.org/rtl-sdr.git
+cd rtl-sdr
+mkdir build
+cd build
+cmake ../ -DINSTALL_UDEV_RULES=ON
+make
+sudo make install
+sudo ldconfig
+```
+
+Connect antenna via cables to the RTL-SDR receiver, connect the receiver to the Raspberri Pi. Do not use the band-pass filter yet, connect cables directly.
+
+```
+cd ~
+sudo cp ./rtl-sdr/rtl-sdr.rules /etc/udev/rules.d/
+sudo printf 'blacklist dvb_usb_rtl28xxu\nblacklist rtl2832\nblacklist rtl2830' > /etc/modprobe.d/nortl.conf
+sudo reboot
+```
 
 # (Optionally) calibrate your receiver
 
@@ -344,7 +417,7 @@ exit 0
 Register
 ```
 sudo chmod +x /etc/init.d/dump1090.sh
-sudo update-rc.d dump1090.sh defaults`
+sudo update-rc.d dump1090.sh defaults
 ```
 
 You can immediately start `dump1090`:#

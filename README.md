@@ -27,17 +27,17 @@ If you don't have a static IP address (you normally don't), your router must sup
 ![Shopping list](images/parts-labeled.jpg)
 
 * Raspberri Pi set
-  * Raspberri Pi 2 Model B [amazon.de](https://www.amazon.de/dp/B01CPGZY3O)
-  * Memory Card 32GB MicroSDHC Class 10, SD adapter [amazon.de](https://www.amazon.de/dp/B01CPGZY3O)
-  * WLAN Adapter [amazon.de](https://www.amazon.de/gp/product/B00416Q5KI)
-  * USB extension cable [amazon.de](https://www.amazon.de/dp/B000NWS55M)
-  * Power supply, heatsinks, case [amazon.de](https://www.amazon.de/gp/product/B00UCSO9G6)
+  * (1) Raspberri Pi 2 Model B [amazon.de](https://www.amazon.de/dp/B01CPGZY3O)
+  * (2) Memory Card 32GB MicroSDHC Class 10, SD adapter [amazon.de](https://www.amazon.de/dp/B01CPGZY3O)
+  * (3) WLAN Adapter [amazon.de](https://www.amazon.de/gp/product/B00416Q5KI)
+  * (4) USB extension cable [amazon.de](https://www.amazon.de/dp/B000NWS55M)
+  * (5) Power supply, heatsinks, case [amazon.de](https://www.amazon.de/gp/product/B00UCSO9G6)
 * Receiver
-  * ADS-B Antenna with *N Female* Connector [ebay.de](http://www.ebay.de/itm/Antenna-ads-b-collinear-great-gain-for-usb-dongle-flightbox-/291800588117)
-  * Cable *N Male - SMA Male*  [amazon.de](https://www.amazon.de/gp/product/B0152WWEUO)
-  * (Optional) Band-pass Filter *SMA Female - SMA Male* [amazon.de](https://www.amazon.de/gp/product/B010GBQXK8)
-  * (Optional) Cable *SMA Female - MCX Male* [amazon.de](https://www.amazon.de/gp/product/B00V4PS1L0)
-  * USB RTL-SDR Receiver [amazon.de](https://www.amazon.de/gp/product/B00VZ1AWQA)
+  * (6) ADS-B Antenna with *N Female* Connector [ebay.de](http://www.ebay.de/itm/Antenna-ads-b-collinear-great-gain-for-usb-dongle-flightbox-/291800588117)
+  * (7) Cable *N Male - SMA Male*  [amazon.de](https://www.amazon.de/gp/product/B0152WWEUO)
+  * (8) (Optional) Band-pass Filter *SMA Female - SMA Male* [amazon.de](https://www.amazon.de/gp/product/B010GBQXK8)
+  * (9) (Optional) Cable *SMA Female - MCX Male* [amazon.de](https://www.amazon.de/gp/product/B00V4PS1L0)
+  * (10) USB RTL-SDR Receiver [amazon.de](https://www.amazon.de/gp/product/B00VZ1AWQA)
 
 We'll assume that you already have a PC with microSD or SD card reader, monitor with HDMI connection and USB keyboard and mouse needed for installation and that you don't have to order the additionally.
   

@@ -278,5 +278,4 @@ Additionally, you can also forward the port `8080` to `argon:8080` so that you c
 
 Now you should see your sensor on the map. If everything's fine, the sensor should go online in a couple of minutes.
 
-![New OpenSky Network sensor on the map](images/osn-new-sensor.png)
-
+![New OpenSky Network sensor on the map](images/osn-new-sensor-on-map.png)

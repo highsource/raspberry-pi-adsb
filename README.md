@@ -8,7 +8,11 @@ and how to connect your station to the [OpenSky Network](https://opensky-network
 
 The proposed base station will be able to receive and decode transponder signals from planes in the radius of up to 200-300 km.
 
+![DUMP1090 Screenshot](images/dump1090.png)
+
 You will also be able to feed your data into [OpenSky Network](https://opensky-network.org/) and other networks and use it in local applications like [PlanePlotter](http://www.coaa.co.uk/planeplotter.htm).
+
+![OpenSky Network Screenshot](images/osn.png)
 
 Instructions below are based on the [ADS-B using dump1090 for the Raspberry Pi](http://www.satsignal.eu/raspberry-pi/dump1090.html) guide.
 

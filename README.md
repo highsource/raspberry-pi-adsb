@@ -24,7 +24,7 @@ If you don't have a static IP address (you normally don't), your router must sup
 
 # Shopping list
 
-![Shopping list](images/parts.jpg)
+![Shopping list](images/parts-labeled.jpg)
 
 * Raspberri Pi set
   * Raspberri Pi 2 Model B [amazon.de](https://www.amazon.de/dp/B01CPGZY3O)

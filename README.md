@@ -24,6 +24,8 @@ If you don't have a static IP address (you normally don't), your router must sup
 
 # Shopping list
 
+![Shopping list](images/parts.png)
+
 * Raspberri Pi set
   * Raspberri Pi 2 Model B [amazon.de](https://www.amazon.de/dp/B01CPGZY3O)
   * Memory Card 32GB MicroSDHC Class 10, SD adapter [amazon.de](https://www.amazon.de/dp/B01CPGZY3O)
@@ -71,6 +73,8 @@ We'll assume that you already have a PC with microSD or SD card reader, monitor 
 * Fix the Raspberri Pi to the case using screws, close the case
 
 # Connect the components
+
+![Assembled components](images/assembled.png)
 
 Antenna:
 
@@ -123,12 +127,12 @@ Now your Raspberri Pi is ready to be used.
 
 ## Set up RTL-SDR drivers and `dump1090`
 
-### Check out the `adsb-base-station` project
+### Check out the `raspberry-pi-adsb` project
 
 ```
 cd ~
-git clone https://github.com/highsource/adsb-base-station.git
-chmod +x ~/adsb-base-station/*.sh
+git clone https://github.com/highsource/raspberry-pi-adsb.git
+chmod +x ~/raspberry-pi-adsb/*.sh
 ```
 
 ### Set up RTL-SDR drivers
@@ -136,7 +140,7 @@ chmod +x ~/adsb-base-station/*.sh
 Check out, build and install drivers for the RTL-SDR receiver:
 
 ```
-cd ~/adsb-base-station
+cd ~/raspberry-pi-adsb
 ./setup-rtl-sdr.sh
 ```
 
@@ -175,7 +179,7 @@ This means RTL-SDR drivers were compiled and installed successfully.
 Check out, build and install `dump1090`:
 
 ```
-cd ~/adsb-base-station
+cd ~/raspberry-pi-adsb
 ./setup-dump1090.sh
 ```
 The `setup-dump1090.sh` also installs `dump1090` was as a service so that `dump1090` starts automatically after system restart.
